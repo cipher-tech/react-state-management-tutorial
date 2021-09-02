@@ -96,7 +96,7 @@ import React, { useState, useEffect } from 'react';
             <div className="todo-container">
                 <div className="header">TODO - ITEMS</div>
                 <div className="header">Pending tasks ({tasksRemaining})</div>
-library 
+ 
                 <div className="tasks">
                     {tasks.map((task: ITaskProperty, index) => (
                         <Task
