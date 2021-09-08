@@ -17,8 +17,8 @@ export default function Task({ task, index, completeTask, removeTask }: IProps) 
             style={{ textDecoration: task.completed ? "line-through" : "" }}
         >
             {task.title}
-            <button style={{ background: "red" }} onClick={() => removeTask(index)}>x</button>
-            <button onClick={() => completeTask(index)}>Complete</button>
+            <button style={{ background: "red" }} onClick={() => removeTask(task.id)}>x</button>
+            <button onClick={() => completeTask(task.id)}>Complete</button>
         </div>
     );
 }

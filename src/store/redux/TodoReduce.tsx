@@ -1,13 +1,30 @@
-import {createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { ITaskProperty } from "../../types";
 import { RootState } from "./index";
 // import { fetchCount } from './counterAPI';
 
 export interface CounterState {
-    allItems: [];
+    allItems: ITaskProperty[];
 }
 
 const initialState: CounterState = {
-    allItems: [],
+    allItems: [
+        {
+            id: 8838,
+            title: "Grab some Pizza",
+            completed: true,
+        },
+        {
+            id: 8844,
+            title: "Do your workout",
+            completed: true,
+        },
+        {
+            id: 8832,
+            title: "Hangout with friends",
+            completed: false,
+        },
+    ],
 };
 
 export const todoSlice = createSlice({
@@ -15,19 +32,33 @@ export const todoSlice = createSlice({
     initialState,
     // The `reducers` field lets us define reducers and generate associated actions
     reducers: {
-        addItem: (state) => {
+        addItem: (state, action: PayloadAction<string>) => {
             // Redux Toolkit allows us to write "mutating" logic in reducers. It
             // doesn't actually mutate the state because it uses the Immer library,
             // which detects changes to a "draft state" and produces a brand new
             // immutable state based off those changes
-            state.allItems = [];
+
+            state.allItems = [
+                ...state.allItems,
+                {
+                    id: Math.floor(Math.random() * 10000),
+                    title: action.payload,
+                    completed: false,
+                },
+            ];
         },
-        deleteItem: (state) => {
-            state.allItems = [];
+        deleteItem: (state, action: PayloadAction<number>) => {
+            state.allItems = state.allItems.filter(
+                (item) => item.id !== action.payload
+            );
         },
         // Use the PayloadAction type to declare the contents of `action.payload`
         completed: (state, action: PayloadAction<number>) => {
-            state.allItems = [];
+            state.allItems = state.allItems.map((item) => {
+                item.completed =
+                    item.id === action.payload ? true : item.completed;
+                return item;
+            });
         },
     },
 });

@@ -1,20 +1,19 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
-import './index.css';
-import reportWebVitals from './reportWebVitals';
-import Todo from './components/todo/Todo';
-import { Provider } from 'react-redux';
-import { store } from './store/redux';
-
+import "./index.css";
+import reportWebVitals from "./reportWebVitals";
+import Todo from "./components/todo/Todo";
+import { Provider } from "react-redux";
+import { store } from "./store/redux";
 
 ReactDOM.render(
-  <Provider store={store}>
-  <React.StrictMode>
-    <Todo />
-  </React.StrictMode>
-  </Provider>,
-  document.getElementById('root')
+    <Provider store={store}>
+        <React.StrictMode>
+            <Todo />
+        </React.StrictMode>
+    </Provider>,
+    document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
