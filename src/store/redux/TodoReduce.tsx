@@ -3,26 +3,22 @@ import { ITaskProperty } from "../../types";
 import { RootState } from "./index";
 // import { fetchCount } from './counterAPI';
 
-export interface CounterState {
+export interface ITaskState {
     allItems: ITaskProperty[];
 }
 
-const initialState: CounterState = {
+// we create our state with initial values
+const initialState: ITaskState = {
     allItems: [
         {
             id: 8838,
-            title: "Grab some Pizza",
+            title: "Write code",
             completed: true,
         },
         {
             id: 8844,
-            title: "Do your workout",
+            title: "Get some sleep",
             completed: true,
-        },
-        {
-            id: 8832,
-            title: "Hangout with friends",
-            completed: false,
         },
     ],
 };

@@ -8,11 +8,6 @@ import "./todo.css";
 
 function Todo() {
     const {allItems} = useSelector(getStore)
-    const s = useSelector(getStore => getStore)
-
-
-    console.log(s);
-    
 
     const dispatch = useDispatch()
     const [tasksRemaining, setTasksRemaining] = useState(0);
