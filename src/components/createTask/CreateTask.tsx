@@ -16,7 +16,7 @@ export default function CreateTask({ addTask }: ICreateTaskProps) {
     }
     
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="formInput" onSubmit={handleSubmit}>
             <input
                 type="text"
                 className="input"
@@ -24,6 +24,7 @@ export default function CreateTask({ addTask }: ICreateTaskProps) {
                 placeholder="Add a new task"
                 onChange={e => setValue(e.target.value)}
             />
+            <button type="submit">Add Task</button>
         </form>
     );
 }

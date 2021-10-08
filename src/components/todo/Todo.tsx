@@ -28,8 +28,8 @@ function Todo() {
     };
     return (
         <div className="todo-container">
-            <div className="header">TODO - ITEMS</div>
-            <div className="header">Pending allItems ({tasksRemaining})</div>
+            <div className="header">TODO - List</div>
+            <div className="header">Pending Tasks ({tasksRemaining})</div>
 
             <div className="tasks">
                 {allItems.map((task: ITaskProperty, index) => (
