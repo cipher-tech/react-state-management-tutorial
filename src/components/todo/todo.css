@@ -8,13 +8,23 @@
     /* border: 3px solid rgb(239 239 239); */
     box-shadow: 5px 5px 11px #999292ad;
 }
+@media only screen and (max-width: 700px) {
+    .todo-container {
+        width: 70vw;
+    }
+}
+@media only screen and (max-width: 450px) {
+    .todo-container {
+        width: 95vw;
+    }
+}
 
 .task {
     border-radius: 5px;
     margin: 0.5em;
     border: solid 2px #dbdbdba6;
     padding: 10px;
-    height: auto;    
+    height: auto;
     align-items: center;
     display: flex;
     justify-content: space-between;
